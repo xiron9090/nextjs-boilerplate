@@ -6,9 +6,10 @@ interface AuthLayoutWrapperProps {
 }
 
 const AuthLayoutWrapper: FC<AuthLayoutWrapperProps> = ({ children }) => {
-  return <Box m={0} >
-    {children}
-  </Box>;
+  return <>
+  
+  {children}
+  </>
 };
 
 export default AuthLayoutWrapper;

@@ -1,16 +1,18 @@
 import Container from "@/components/Container";
-import { Box } from "@mui/material";
+import SignInForm from "@/modules/auth/components/SignInForm";
+import Box from "@mui/material/Box";
+import { useTheme } from "@mui/material/styles";
 import { Metadata } from "next";
 import { FC } from "react";
-import ForgotPasswordFrom from "../_components/ForgotPasswordForm";
 
 export const metadata: Metadata = {
-  title: 'Forgot Password',
-  description: 'Page for forgot password',
-}
-interface ForgotPasswordPageProps {}
+  title: "Sign In page",
+  description: "Page for Sign In",
+};
+interface SignInPageProps {}
 
-const ForgotPasswordPage: FC<ForgotPasswordPageProps> = () => {
+const SignInPage: FC<SignInPageProps> = () => {
+  // const theme = useTheme();
   return (
     <Box
       sx={{
@@ -32,7 +34,10 @@ const ForgotPasswordPage: FC<ForgotPasswordPageProps> = () => {
             alignItems={"center"}
             marginRight={{ xs: 0, md: 4 }}
           >
-            <Container><ForgotPasswordFrom/></Container>
+            <Container>
+             {/* @ts-expect-error Server Component */}
+              <SignInForm />
+            </Container>
           </Box>
           <Box
             sx={{
@@ -99,4 +104,4 @@ const ForgotPasswordPage: FC<ForgotPasswordPageProps> = () => {
   );
 };
 
-export default ForgotPasswordPage
+export default SignInPage;

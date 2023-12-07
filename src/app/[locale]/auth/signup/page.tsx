@@ -1,8 +1,8 @@
 import Container from "@/components/Container";
+import SignUpForm from "@/modules/auth/components/SignUpForm";
 import { Box } from "@mui/material";
 import { Metadata } from "next";
 import { FC } from "react";
-import SignUpForm from "../_components/SignupForm";
 
 export const metadata: Metadata = {
   title: 'Sign Up page',

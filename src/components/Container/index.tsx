@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 
 interface Props {
-  children: React.ReactNode;
+  children: React.ReactNode|JSX.Element;
   [x: string]: any;
 }
 

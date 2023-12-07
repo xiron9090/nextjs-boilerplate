@@ -1,0 +1,6 @@
+{
+    "auth": {
+      "$ref": "./src/modules/auth/i18n/es.json"
+    }
+  }
+  
