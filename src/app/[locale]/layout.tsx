@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { ReactNode, Suspense } from "react";
+import { ThemeProvider } from "@/theme/ThemeProvider";
 
 type Props = {
   children: ReactNode;
@@ -21,12 +22,15 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
-        <title>next-intl & next-auth</title>
+        <title>{process.env.APP_NAME}</title>
       </head>
-      <body>
+      <body style={{margin:0}}>
         <Suspense>
+
           <NextIntlClientProvider locale={locale} messages={messages}>
+          <ThemeProvider>
             {children}
+          </ThemeProvider>
           </NextIntlClientProvider>
         </Suspense>
       </body>

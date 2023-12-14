@@ -1,11 +1,11 @@
-import AuthLayoutWrapper from "@/layouts/AuthLayout";
+import Main from "@/layouts/Main";
 import { Suspense } from "react";
 
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <AuthLayoutWrapper>
+    <Main>
       <Suspense>{children}</Suspense>
-    </AuthLayoutWrapper>
+    </Main>
   );
 };
 export default AuthLayout;
