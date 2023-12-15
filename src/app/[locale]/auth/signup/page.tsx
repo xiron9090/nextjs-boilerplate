@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import { AuthForm } from "@/modules/auth/components/AuthForm";
 import SignUpForm from "@/modules/auth/components/SignUpForm";
 import { Box } from "@mui/material";
 import { Metadata } from "next";
@@ -32,7 +33,9 @@ const SignUpPage: FC<SignUpPageProps> = () => {
             alignItems={"center"}
             marginRight={{ xs: 0, md: 4 }}
           >
-            <Container><SignUpForm/></Container>
+            <Container>
+            <AuthForm view="sign_up"  />
+            </Container>
           </Box>
           <Box
             sx={{

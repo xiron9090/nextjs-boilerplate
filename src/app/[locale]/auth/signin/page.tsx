@@ -1,5 +1,5 @@
 import Container from "@/components/Container";
-import SignInForm from "@/modules/auth/components/SignInForm";
+import {AuthForm} from "@/modules/auth/components/AuthForm";
 import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
 import { Metadata } from "next";
@@ -13,6 +13,7 @@ interface SignInPageProps {}
 
 const SignInPage: FC<SignInPageProps> = () => {
   // const theme = useTheme();
+  
   return (
     <Box
       sx={{
@@ -35,8 +36,7 @@ const SignInPage: FC<SignInPageProps> = () => {
             marginRight={{ xs: 0, md: 4 }}
           >
             <Container>
-             {/* @ts-expect-error Server Component */}
-              <SignInForm />
+              <AuthForm view="sign_in"  />
             </Container>
           </Box>
           <Box
