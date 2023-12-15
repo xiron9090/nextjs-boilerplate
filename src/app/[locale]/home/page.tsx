@@ -1,14 +1,15 @@
+import Home from "@/modules/home";
 import { FC } from "react";
 
-interface HomeProps {
+interface HomePageProps {
     
 }
  
-const Home: FC<HomeProps> = () => {
+const HomePage: FC<HomePageProps> = () => {
     return ( 
-        <>
-        </>
+        <Home/>
+       
      );
 }
  
-export default Home;
+export default HomePage;

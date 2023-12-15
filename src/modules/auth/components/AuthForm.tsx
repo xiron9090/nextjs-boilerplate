@@ -28,11 +28,12 @@ export const AuthForm: FC<AuthFormProps> = ({ view }) => {
           },
         },
       }}
-      providers={view==='sign_in'?["google", "facebook", "twitter", "apple"]:[]
+      providers={
+        view === "sign_in" ? ["google", "facebook", "twitter", "apple"] : []
       }
       appearance={{ theme: ThemeSupa }}
       theme={theme.palette.mode}
-      showLinks={true}
+      showLinks={false}
       //   providers={[]}
       redirectTo="http://localhost:3000/auth/callback"
     />

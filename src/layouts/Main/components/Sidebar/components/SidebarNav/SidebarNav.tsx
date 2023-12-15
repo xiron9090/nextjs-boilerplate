@@ -43,9 +43,9 @@ const SidebarNav = ({ pages }: Props): JSX.Element => {
             component={'img'}
             src={
               mode === 'light'
-                ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg'
-                : 'https://assets.maccarianagency.com/the-front/logos/logo-negative.svg'
-            }
+              ? "https://assets.static-upwork.com/org-logo/810370216118648832?date=1702622844532"
+              : "https://ntsprint.com/wp-content/uploads/2023/06/NTS-LOGO-1.png"
+          }
             height={1}
             width={1}
           />

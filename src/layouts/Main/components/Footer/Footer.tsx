@@ -31,9 +31,9 @@ const Footer = (): JSX.Element => {
               component={'img'}
               src={
                 mode === 'light'
-                  ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg'
-                  : 'https://assets.maccarianagency.com/the-front/logos/logo-negative.svg'
-              }
+                ? "https://assets.static-upwork.com/org-logo/810370216118648832?date=1702622844532"
+                : "https://ntsprint.com/wp-content/uploads/2023/06/NTS-LOGO-1.png"
+            }
               height={1}
               width={1}
             />
@@ -84,7 +84,7 @@ const Footer = (): JSX.Element => {
           color="text.secondary"
           gutterBottom
         >
-          &copy; theFront. 2021, Maccarian. All rights reserved
+          &copy; NTSPRINT. 2021, Maccarian. All rights reserved
         </Typography>
         <Typography
           align={'center'}

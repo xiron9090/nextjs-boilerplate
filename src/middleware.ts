@@ -17,13 +17,15 @@ export default async function middleware(req: NextRequest) {
   const {
     data: { user },
   } = await supabase.auth.getUser();
+  if ( req.nextUrl.pathname === "/") {
+    return NextResponse.redirect(`${req.url}home`);
+  }
   if (req.nextUrl.pathname === `/${req.nextUrl.pathname.split('/')[1]}/auth`) {
     return NextResponse.redirect(`${req.url}/signin`);
   }
-  console.log(user)
-  if (!user && req.nextUrl.pathname === "/") {
-    return NextResponse.redirect(`${req.url}auth/signin`);
-  }
+  // if (!user && (req.nextUrl.pathname === "/" ||req.nextUrl.pathname === "/home" )) {
+  //   return NextResponse.redirect(new URL('/auth/signin', req.url));
+  // }
 
   return intlMiddleware(req);
 }
