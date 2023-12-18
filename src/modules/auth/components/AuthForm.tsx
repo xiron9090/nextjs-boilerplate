@@ -35,7 +35,7 @@ export const AuthForm: FC<AuthFormProps> = ({ view }) => {
       theme={theme.palette.mode}
       showLinks={false}
       //   providers={[]}
-      redirectTo="http://localhost:3000/auth/callback"
+      redirectTo="http://localhost:3000"
     />
   );
 };

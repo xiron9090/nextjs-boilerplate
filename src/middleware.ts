@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { locales } from "./navigation";
 import createIntlMiddleware from "next-intl/middleware";
 import { createMiddlewareClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
 
 const intlMiddleware = createIntlMiddleware({
   locales,
@@ -13,6 +14,8 @@ const intlMiddleware = createIntlMiddleware({
 export default async function middleware(req: NextRequest) {
   const res = NextResponse.next();
   const supabase = createMiddlewareClient({ req, res });
+  res.cookies.set('supabaseUrl',process.env.NEXT_PUBLIC_SUPABASE_URL!)
+  res.cookies.set('supabaseKey',process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!)
   await supabase.auth.getSession();
   const {
     data: { user },

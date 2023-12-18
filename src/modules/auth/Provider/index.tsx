@@ -3,6 +3,7 @@
 import { FC, ReactElement, ReactNode, createContext, useEffect } from 'react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { useRouter } from 'next/navigation';
+import { Database } from '../../../../database.types';
 
 export const AuthContext = createContext({});
 type AuthProviderProps={
@@ -10,7 +11,7 @@ type AuthProviderProps={
     children:ReactElement
 }
 const AuthProvider:FC<AuthProviderProps> = ({ accessToken, children }) => {
-  const supabase = createClientComponentClient();
+  const supabase = createClientComponentClient<Database>();
   const router = useRouter();
 
   useEffect(() => {
