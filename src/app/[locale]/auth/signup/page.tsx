@@ -34,7 +34,7 @@ const SignUpPage: FC<SignUpPageProps> = () => {
             marginRight={{ xs: 0, md: 4 }}
           >
             <Container>
-            <AuthForm view="sign_up"  />
+            <SignUpForm />
             </Container>
           </Box>
           <Box

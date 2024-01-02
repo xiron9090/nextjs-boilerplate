@@ -7,8 +7,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { NavItem } from "./components";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useCookiesProvider } from "@/hooks/useCookiesClient";
-import { useCookies } from 'next-client-cookies';
 
 interface Props {
   onSidebarOpen: () => void;
@@ -65,7 +63,7 @@ const Topbar = ({
         />
       </Box>
       <Box sx={{ display: { xs: "none", md: "flex" } }} alignItems={"center"}>
-        {/* <Box>
+        <Box>
           <NavItem
             title={"Landings"}
             id={"landing-pages"}
@@ -112,14 +110,14 @@ const Topbar = ({
             items={portfolioPages}
             colorInvert={colorInvert}
           />
-        </Box> */}
+        </Box>
         <Box marginLeft={4}>
           <Link
             // variant="contained"
             color={theme.palette.primary.light}
             // component="a"
             // target="blank"
-            href={`/auth/signin`}
+            href={`/auth/signing`}
             // size="large"
             style={{
               textDecoration: "none",

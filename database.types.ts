@@ -9,88 +9,48 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
-      user_profile: {
+      users_profile: {
         Row: {
-          avatar: string
-          avatar_id: string | null
           created_at: string
-          id: number
-          las_name: string
-          name: string
-          user_id: string | null
+          display_name: string | null
+          email: string | null
+          enabled: boolean
+          firts_name: string | null
+          id: string
+          last_name: string | null
+          role: string
+          user_avatar: string | null
+          user_info_social_media: Json | null
         }
         Insert: {
-          avatar: string
-          avatar_id?: string | null
           created_at?: string
-          id?: number
-          las_name: string
-          name: string
-          user_id?: string | null
+          display_name?: string | null
+          email?: string | null
+          enabled?: boolean
+          firts_name?: string | null
+          id?: string
+          last_name?: string | null
+          role?: string
+          user_avatar?: string | null
+          user_info_social_media?: Json | null
         }
         Update: {
-          avatar?: string
-          avatar_id?: string | null
           created_at?: string
-          id?: number
-          las_name?: string
-          name?: string
-          user_id?: string | null
+          display_name?: string | null
+          email?: string | null
+          enabled?: boolean
+          firts_name?: string | null
+          id?: string
+          last_name?: string | null
+          role?: string
+          user_avatar?: string | null
+          user_info_social_media?: Json | null
         }
-        Relationships: [
-          {
-            foreignKeyName: "user_profile_avatar_id_fkey"
-            columns: ["avatar_id"]
-            isOneToOne: false
-            referencedRelation: "objects"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "user_profile_user_id_fkey"
-            columns: ["user_id"]
-            isOneToOne: false
-            referencedRelation: "users"
-            referencedColumns: ["id"]
-          }
-        ]
+        Relationships: []
       }
     }
     Views: {
-      user_view: {
-        Row: {
-          avatar: string | null
-          created_at: string | null
-          id: number | null
-          las_name: string | null
-          name: string | null
-          user_id: string | null
-        }
-        Insert: {
-          avatar?: string | null
-          created_at?: string | null
-          id?: number | null
-          las_name?: string | null
-          name?: string | null
-          user_id?: string | null
-        }
-        Update: {
-          avatar?: string | null
-          created_at?: string | null
-          id?: number | null
-          las_name?: string | null
-          name?: string | null
-          user_id?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "user_profile_user_id_fkey"
-            columns: ["user_id"]
-            isOneToOne: false
-            referencedRelation: "users"
-            referencedColumns: ["id"]
-          }
-        ]
-      }
+      [_ in never]: never
     }
     Functions: {
       [_ in never]: never

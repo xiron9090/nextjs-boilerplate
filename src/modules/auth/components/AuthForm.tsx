@@ -1,7 +1,7 @@
 "use client";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa, ViewType } from "@supabase/auth-ui-shared";
-import supabase from "@/supabase/client";
+import supabase from "@/config/supabase/client";
 import { useTranslations } from "next-intl";
 import { useTheme } from "@mui/material";
 import { FC } from "react";
@@ -29,7 +29,7 @@ export const AuthForm: FC<AuthFormProps> = ({ view }) => {
         },
       }}
       providers={
-        view === "sign_in" ? ["google", "facebook", "twitter", "apple"] : []
+        view === "sign_in" ? ["google", "facebook", "twitter", "apple","github"] : []
       }
       appearance={{ theme: ThemeSupa }}
       theme={theme.palette.mode}

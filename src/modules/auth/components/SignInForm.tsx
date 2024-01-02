@@ -8,14 +8,19 @@ import { useTranslations } from "next-intl";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FC } from "react";
 import { schemaValidationSignIn } from "../validations/auth.validation";
+import { useCookies } from "next-client-cookies";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 interface SignInFormProps {}
 
 const SignInForm: FC<SignInFormProps> = () => {
   const t = useTranslations();
+  const router = useRouter();
   const {
     control,
     handleSubmit,
     formState: { errors, isValid, isDirty },
+    reset,
   } = useForm<AuthLoginTypeRequest>({
     defaultValues: {
       email: "",
@@ -30,11 +35,18 @@ const SignInForm: FC<SignInFormProps> = () => {
       })
     ),
   });
-  handleSubmit(async (data) => {
-    const response = await signInAction(data);
-  });
+  const cookies = useCookies();
   const action: () => void = handleSubmit(async (data) => {
     const response = await signInAction(data);
+    if (response.error) {
+      toast.error(response.error.message);
+      reset();
+    }
+    if (response.data.session) {
+      cookies.set("userToken", response.data.session?.access_token!);
+      toast.success("Welcome");
+      router.replace("/");
+    }
   });
   return (
     <Box>

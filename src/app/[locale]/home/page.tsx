@@ -1,15 +1,15 @@
-import Home from "@/modules/home";
+import { Metadata } from "next";
 import { FC } from "react";
 
-interface HomePageProps {
-    
-}
- 
-const HomePage: FC<HomePageProps> = () => {
-    return ( 
-        <Home/>
-       
-     );
-}
- 
+interface HomePageProps {}
+export const metadata: Metadata = {
+  title: "hhhhhhhh...",
+  openGraph: {
+    title: "ddddd",
+  },
+};
+const HomePage = () => {
+  return <>home</>;
+};
+
 export default HomePage;
