@@ -47,13 +47,13 @@ const Main = ({
     disableHysteresis: true,
     threshold: 38,
   });
+  
 
   return (
     <Box>
       <Box bgcolor={bgcolor} position={'relative'} zIndex={theme.zIndex.appBar}>
-        <Container paddingTop={'8px !important'} paddingBottom={'0 !important'}>
-          <TopNav colorInvert={colorInvert} />
-        </Container>
+        {/* <Container paddingTop={'8px !important'} paddingBottom={'0 !important'}>
+        </Container> */}
       </Box>
       <AppBar
         position={'sticky'}
@@ -69,6 +69,7 @@ const Main = ({
             pages={pages}
             colorInvert={trigger ? false : colorInvert}
           />
+          
         </Container>
       </AppBar>
       <Sidebar

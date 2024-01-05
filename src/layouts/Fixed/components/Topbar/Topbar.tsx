@@ -6,6 +6,7 @@ import { alpha, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 
 import { ThemeModeToggler } from './components';
+import { Avatar } from '@/components/Avatar';
 
 interface Props {
   onSidebarOpen: () => void;
@@ -80,7 +81,8 @@ const Topbar = ({ onSidebarOpen }: Props): JSX.Element => {
           <ThemeModeToggler />
         </Box>
         <Box marginLeft={3}>
-          <Button
+          <Avatar/>
+          {/* <Button
             variant="contained"
             color="primary"
             component="a"
@@ -89,7 +91,7 @@ const Topbar = ({ onSidebarOpen }: Props): JSX.Element => {
             size="large"
           >
             Purchase now
-          </Button>
+          </Button> */}
         </Box>
       </Box>
       <Box sx={{ display: { xs: 'flex', md: 'none' } }} alignItems={'center'}>

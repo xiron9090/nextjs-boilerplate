@@ -22,14 +22,17 @@ export default async function middleware(req: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser(cookies().get("userToken")?.value);
 
-  console.log("this user", user);
+  // console.log("this user", user);
   const { data: profile } = await supabase
     .from("users_profile")
     .select('*').eq("id",user?.id!).single()
 
    
 
-  console.log("this profile", profile);
+  console.log("this profile", req.nextUrl.pathname);
+  if (req.nextUrl.pathname.includes('auth') && user) {
+    return NextResponse.redirect(new URL("/", req.url));
+  }
   if (
     req.nextUrl.pathname === `/${req.nextUrl.pathname.split("/")[1]}/admin` &&
     profile?.role !== "admin"

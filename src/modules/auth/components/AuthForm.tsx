@@ -10,10 +10,11 @@ type AuthFormProps = {
   view: ViewType;
 };
 export const AuthForm: FC<AuthFormProps> = ({ view }) => {
-  //   const supabase = createClientComponentClient()
+  //   const supabase = createClientComponentClient[()
   const t = useTranslations();
   const theme = useTheme();
   return (
+    <Auth.UserContextProvider supabaseClient={supabase}>
     <Auth
       supabaseClient={supabase}
       view={view}
@@ -33,9 +34,10 @@ export const AuthForm: FC<AuthFormProps> = ({ view }) => {
       }
       appearance={{ theme: ThemeSupa }}
       theme={theme.palette.mode}
-      showLinks={false}
+      showLinks={true}
       //   providers={[]}
-      redirectTo="http://localhost:3000"
+      redirectTo="http://localhost:3000/es/auth/callback"
     />
+    </Auth.UserContextProvider>
   );
 };

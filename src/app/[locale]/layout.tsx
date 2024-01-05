@@ -9,15 +9,12 @@ import createServerComponentClientCustom from "@/config/supabase/server";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Metadata } from "next";
+import { AppContextProvider } from "@/context";
 type Props = {
   children: ReactNode;
   params: { locale: string };
 };
-export const meta: Metadata = {
-  openGraph: {
-    title: process.env.APP_NAME,
-  },
-};
+
 export default async function LocaleLayout({
   children,
   params: { locale },
@@ -48,6 +45,7 @@ export default async function LocaleLayout({
       </head>
       <body style={{ margin: 0 }}>
         <Suspense>
+        <AppContextProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <CookiesProvider>
               <ToastContainer
@@ -68,6 +66,7 @@ export default async function LocaleLayout({
               <ToastContainer />
             </CookiesProvider>
           </NextIntlClientProvider>
+          </AppContextProvider>
         </Suspense>
       </body>
     </html>

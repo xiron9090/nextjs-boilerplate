@@ -1,17 +1,21 @@
 "use client"
-import { useEffect, useState } from "react";
+import { useAppContext } from "@/context";
+import {  useEffect, useState } from "react";
 
 export const useDarkMode = (): [string, () => void, boolean] => {
     const [themeMode, setTheme] = useState('light');
     const [mountedComponent, setMountedComponent] = useState(false);
+    const {setTheme:setThemeContext} = useAppContext()
   
     const setMode = (mode: string) => {
       try {
         window.localStorage.setItem('themeMode', mode);
+        
       } catch {
         /* do nothing */
       }
-  
+      
+      setThemeContext(mode as "light" | "dark");
       setTheme(mode);
     };
   

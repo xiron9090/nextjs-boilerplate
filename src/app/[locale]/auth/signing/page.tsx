@@ -35,6 +35,7 @@ const SignInPage: FC<SignInPageProps> = () => /* const theme = useTheme();*/ (
         >
           <Container>
             <SignInForm />
+            <AuthForm view="sign_in"/>
           </Container>
         </Box>
         <Box

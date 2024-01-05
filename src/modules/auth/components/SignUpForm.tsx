@@ -39,7 +39,6 @@ const SignUpForm: FC<SignUpFormProps> = () => {
       })
     ),
   });
-  const cookies = useCookies();
   const action: () => void = handleSubmit(async (data) => {
     const response = await signUpAction(data);
     if (response.error) {

@@ -7,7 +7,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { NavItem } from "./components";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
+import TopNav from "@/components/TopNav/TopNav";
+import { useCookiesProvider } from "@/hooks/useCookiesClient";
+import createClientComponentClient from "../../../../config/supabase/client";
+import { useUserData } from "@/hooks/useUserData";
+import { Auth } from "@supabase/auth-ui-react";
+import { Avatar } from "@/components/Avatar";
+import { IconButton } from "@mui/material";
+import LanguageIcon from '@mui/icons-material/Language';
+import { usePopover } from "@/hooks/usePoppover";
 interface Props {
   onSidebarOpen: () => void;
   pages: {
@@ -37,6 +45,13 @@ const Topbar = ({
     portfolio: portfolioPages,
     blog: blogPages,
   } = pages;
+  const { token, socialToken0, socialToken1, tokenSupabase } =
+    useCookiesProvider();
+  // const user = useUserData();
+  const { user } = Auth.useUser();
+  console.log("this user 1", user);
+  // console.log("this user", user);
+  const languageMenutPopover = usePopover();
   return (
     <Box
       display={"flex"}
@@ -63,7 +78,7 @@ const Topbar = ({
         />
       </Box>
       <Box sx={{ display: { xs: "none", md: "flex" } }} alignItems={"center"}>
-        <Box>
+        {/* <Box>
           <NavItem
             title={"Landings"}
             id={"landing-pages"}
@@ -110,40 +125,61 @@ const Topbar = ({
             items={portfolioPages}
             colorInvert={colorInvert}
           />
+        </Box> */}
+        <Box marginLeft={4}>
+          <IconButton aria-label="delete">
+            <LanguageIcon />
+          </IconButton>
         </Box>
         <Box marginLeft={4}>
-          <Link
-            // variant="contained"
-            color={theme.palette.primary.light}
-            // component="a"
-            // target="blank"
-            href={`/auth/signing`}
-            // size="large"
-            style={{
-              textDecoration: "none",
-              color: theme.palette.primary.light,
-            }}
-          >
-            Sign In
-          </Link>
+          <TopNav colorInvert={colorInvert} />
         </Box>
-        <Box marginLeft={4}>
-          <Link
-            // variant="contained"
-            color={theme.palette.primary.light}
-            // component="a"
-            // target="blank"
-            href={`/auth/signup`}
-            // size="large"
-            style={{
-              textDecoration: "none",
-              color: theme.palette.primary.light,
-            }}
+
+        {token || (socialToken0 && socialToken1) || tokenSupabase ? (
+          <Box
+            marginLeft={4}
+            // component={<Avatar/>}
           >
-            Sign Up
-          </Link>
-        </Box>
+            <Avatar />
+          </Box>
+        ) : (
+          <>
+            <Box marginLeft={4}>
+              <Link
+                // variant="contained"
+                color={theme.palette.primary.light}
+                // component="a"
+                // target="blank"
+                href={`/auth/signing`}
+                // size="large"
+                style={{
+                  textDecoration: "none",
+                  color: theme.palette.primary.light,
+                }}
+              >
+                Sign In
+              </Link>
+            </Box>
+            <Box marginLeft={4}>
+              <Link
+                // variant="contained"
+                color={theme.palette.primary.light}
+                // component="a"
+                // target="blank"
+                href={`/auth/signup`}
+                // size="large"
+                style={{
+                  textDecoration: "none",
+                  color: theme.palette.primary.light,
+                }}
+              >
+                Sign Up
+              </Link>
+            </Box>
+          </>
+        )}
       </Box>
+
       <Box sx={{ display: { xs: "flex", md: "none" } }} alignItems={"center"}>
         <Button
           onClick={() => onSidebarOpen()}
