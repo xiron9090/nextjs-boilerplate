@@ -1,5 +1,6 @@
 "use client";
 
+import MainLayout from "@/layouts/main/layout";
 import { useScroll } from "framer-motion";
 // @mui
 import { styled } from "@mui/material/styles";
@@ -7,7 +8,6 @@ import Box from "@mui/material/Box";
 // layouts
 // components
 import ScrollProgress from "@/components/scroll-progress";
-import MainLayout from '@/layouts/main'
 //
 import HomeHero from "../home-hero";
 import HomeMinimal from "../home-minimal";
