@@ -33,9 +33,7 @@ const Hero = (): JSX.Element => {
     email: '',
   };
 
-  const onSubmit = (values:any) => {
-    return values;
-  };
+  const onSubmit = (values:any) => values;
 
   // const formik = useFormik({
   //   initialValues,
@@ -44,19 +42,19 @@ const Hero = (): JSX.Element => {
   // });
 
   return (
-    <Box position={'relative'} zIndex={2}>
-      <Box width={1} height={1} position={'absolute'} overflow={'hidden'}>
+    <Box position="relative" zIndex={2}>
+      <Box width={1} height={1} position="absolute" overflow="hidden">
         <Box
           width={1}
           height={1}
-          position={'absolute'}
-          top={'50%'}
-          left={'50%'}
+          position="absolute"
+          top="50%"
+          left="50%"
           sx={{ transform: 'translate(-50%,-50%)' }}
         >
           <iframe
             frameBorder="0"
-            allowFullScreen={true}
+            allowFullScreen
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             title="YouTube video player"
             width="100%"
@@ -66,12 +64,12 @@ const Hero = (): JSX.Element => {
         </Box>
       </Box>
       <Box
-        position={'relative'}
+        position="relative"
         zIndex={2}
         minHeight={{ xs: 'calc(100vh - 158px)', md: 'calc(100vh - 230px)' }}
-        display={'flex'}
-        justifyContent={'center'}
-        alignItems={'center'}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
         marginTop={-13}
         paddingTop={13}
         sx={{
@@ -91,12 +89,12 @@ const Hero = (): JSX.Element => {
           },
         }}
       >
-        <Container position={'relative'} zIndex={4}>
+        <Container position="relative" zIndex={4}>
           <Box>
             <Box marginBottom={4}>
               <Typography
-                variant={'h3'}
-                align={'center'}
+                variant="h3"
+                align="center"
                 gutterBottom
                 sx={{
                   color: theme.palette.common.white,
@@ -106,8 +104,8 @@ const Hero = (): JSX.Element => {
                 We craft beautiful websites and digital products
               </Typography>
               <Typography
-                variant={'h6'}
-                align={'center'}
+                variant="h6"
+                align="center"
                 sx={{
                   color: theme.palette.common.white,
                   fontWeight: 700,
@@ -134,7 +132,7 @@ const Hero = (): JSX.Element => {
                     width={1}
                     marginRight={{ xs: 0, md: 2 }}
                     marginBottom={{ xs: 4, md: 0 }}
-                    display={'flex'}
+                    display="flex"
                     flexDirection={{ xs: 'column', md: 'row' }}
                   >
                     <TextField
@@ -148,7 +146,7 @@ const Hero = (): JSX.Element => {
                       size="medium"
                       label="Name"
                       fullWidth
-                      name={'name'}
+                      name="name"
                       // value={formik.values.name}
                       // onChange={formik.handleChange}
                       // error={formik.touched.name && Boolean(formik.errors.name)}
@@ -164,7 +162,7 @@ const Hero = (): JSX.Element => {
                       size="medium"
                       label="Email"
                       fullWidth
-                      name={'email'}
+                      name="email"
                       // value={formik.values.email}
                       // onChange={formik.handleChange}
                       // error={

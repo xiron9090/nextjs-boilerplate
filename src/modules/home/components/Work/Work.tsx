@@ -48,28 +48,28 @@ const Work = (): JSX.Element => {
             fontWeight: 'medium',
           }}
           gutterBottom
-          color={'secondary'}
-          align={'center'}
+          color="secondary"
+          align="center"
         >
           Our work
         </Typography>
-        <Typography variant={'h4'} sx={{ fontWeight: 700 }} align={'center'}>
+        <Typography variant="h4" sx={{ fontWeight: 700 }} align="center">
           We are a small agency of talented designers & developers
         </Typography>
         <Typography
           variant="h6"
           component="p"
           color="text.secondary"
-          align={'center'}
+          align="center"
         >
           Unlike teams from big agencies, we will treat your project as ours. We
           will walk you through our smooth and simple process.
         </Typography>
-        <Box marginTop={2} display={'flex'} justifyContent={'center'}>
+        <Box marginTop={2} display="flex" justifyContent="center">
           <Button
-            color={'primary'}
-            variant={'contained'}
-            size={'large'}
+            color="primary"
+            variant="contained"
+            size="large"
             startIcon={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -101,10 +101,10 @@ const Work = (): JSX.Element => {
             spacing={4}
             direction={i % 2 === 1 ? 'row-reverse' : 'row'}
           >
-            <Grid item container alignItems={'center'} xs={12} sm={6}>
+            <Grid item container alignItems="center" xs={12} sm={6}>
               <Box>
                 <Typography
-                  variant={'h6'}
+                  variant="h6"
                   gutterBottom
                   sx={{ fontWeight: 700 }}
                 >
@@ -114,11 +114,11 @@ const Work = (): JSX.Element => {
                   {item.description}
                 </Typography>
                 <Button
-                  size={'large'}
+                  size="large"
                   sx={{ marginTop: 2 }}
                   endIcon={
                     <Box
-                      component={'svg'}
+                      component="svg"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -142,13 +142,13 @@ const Work = (): JSX.Element => {
             <Grid
               item
               container
-              justifyContent={'center'}
-              alignItems={'center'}
+              justifyContent="center"
+              alignItems="center"
               xs={12}
               sm={6}
             >
               <Box
-                component={'img'}
+                component="img"
                 src={`${
                   theme.palette.mode === 'light'
                     ? item.illustration
@@ -156,7 +156,7 @@ const Work = (): JSX.Element => {
                 }`}
                 alt={item.title}
                 width={1}
-                maxWidth={'80%'}
+                maxWidth="80%"
               />
             </Grid>
           </Grid>

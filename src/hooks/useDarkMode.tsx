@@ -1,4 +1,7 @@
 "use client"
+
+/* eslint-disable @typescript-eslint/no-unused-expressions */
+
 import { useAppContext } from "@/context";
 import {  useEffect, useState } from "react";
 

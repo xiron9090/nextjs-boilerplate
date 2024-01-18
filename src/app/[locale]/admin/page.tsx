@@ -1,9 +1,7 @@
-const Admin = () => {
-    return ( 
+const Admin = () => ( 
         <>
         Admin
         </>
-     );
-}
+     )
  
 export default Admin;

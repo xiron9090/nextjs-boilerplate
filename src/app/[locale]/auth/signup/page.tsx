@@ -11,8 +11,7 @@ export const metadata: Metadata = {
 }
 interface SignUpPageProps {}
 
-const SignUpPage: FC<SignUpPageProps> = () => {
-  return (
+const SignUpPage: FC<SignUpPageProps> = () => (
     <Box
       sx={{
         width: 1,
@@ -22,15 +21,15 @@ const SignUpPage: FC<SignUpPageProps> = () => {
     >
       <Container paddingX={0} paddingY={0} maxWidth={{ sm: 1, md: 1236 }}>
         <Box
-          display={"flex"}
+          display="flex"
           flexDirection={{ xs: "column", md: "row" }}
-          position={"relative"}
+          position="relative"
         >
           <Box
             width={1}
             order={{ xs: 2, md: 1 }}
-            display={"flex"}
-            alignItems={"center"}
+            display="flex"
+            alignItems="center"
             marginRight={{ xs: 0, md: 4 }}
           >
             <Container>
@@ -75,10 +74,8 @@ const SignUpPage: FC<SignUpPageProps> = () => {
                     }}
                   >
                     <Box
-                      component={"img"}
-                      src={
-                        "https://assets.maccarianagency.com/backgrounds/img18.jpg"
-                      }
+                      component="img"
+                      src="https://assets.maccarianagency.com/backgrounds/img18.jpg"
                       height={{ xs: "auto", md: 1 }}
                       maxHeight={{ xs: 300, md: 1 }}
                       width={1}
@@ -100,6 +97,5 @@ const SignUpPage: FC<SignUpPageProps> = () => {
       </Container>
     </Box>
   );
-};
 
 export default SignUpPage

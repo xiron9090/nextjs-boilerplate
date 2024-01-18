@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-shadow */
 import React, { useEffect, useState } from 'react';
 import { alpha, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -23,7 +24,7 @@ const SidebarNav = ({ pages, onClose }: Props): JSX.Element => {
   return (
     <Box paddingBottom={2}>
       <Box
-        justifyContent={'flex-end'}
+        justifyContent="flex-end"
         onClick={() => onClose()}
         display={{ xs: 'flex', md: 'none' }}
       >
@@ -47,7 +48,7 @@ const SidebarNav = ({ pages, onClose }: Props): JSX.Element => {
               {item.pages.map((p, i) => (
                 <Box marginBottom={1 / 2} key={i}>
                   <Button
-                    component={'a'}
+                    component="a"
                     href={p.href}
                     target={p.target}
                     fullWidth

@@ -5,12 +5,10 @@ interface AdminLayoutProps {
     children:ReactNode
 }
  
-const AdminLayout =async ({children}:AdminLayoutProps) => {
-    return ( 
+const AdminLayout =async ({children}:AdminLayoutProps) => ( 
         <Fixed>
         {children}
         </Fixed>
-     );
-}
+     )
  
 export default AdminLayout;

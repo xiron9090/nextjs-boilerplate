@@ -7,8 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import ListItemText from '@mui/material/ListItemText';
 import CardMedia from '@mui/material/CardMedia';
 
-const Team = (): JSX.Element => {
-  return (
+const Team = (): JSX.Element => (
     <Box>
       <Box marginBottom={4}>
         <Typography
@@ -17,12 +16,12 @@ const Team = (): JSX.Element => {
             fontWeight: 'medium',
           }}
           gutterBottom
-          color={'secondary'}
-          align={'center'}
+          color="secondary"
+          align="center"
         >
           Our team
         </Typography>
-        <Typography fontWeight={700} variant={'h4'} align={'center'}>
+        <Typography fontWeight={700} variant="h4" align="center">
           Trust the professionals
         </Typography>
       </Box>
@@ -55,7 +54,7 @@ const Team = (): JSX.Element => {
             sm={6}
             md={3}
             key={i}
-            data-aos={'fade-up'}
+            data-aos="fade-up"
             data-aos-delay={i * 100}
             data-aos-offset={100}
             data-aos-duration={600}
@@ -77,7 +76,7 @@ const Team = (): JSX.Element => {
               />
               <Box
                 component={CardContent}
-                bgcolor={'transparent'}
+                bgcolor="transparent"
                 marginTop={-5}
               >
                 <Box component={Card} borderRadius={2}>
@@ -92,6 +91,5 @@ const Team = (): JSX.Element => {
       </Grid>
     </Box>
   );
-};
 
 export default Team;

@@ -1,12 +1,13 @@
 "use server";
+
 import createServerComponentClientCustom from "@/config/supabase/server";
-import { AuthLoginTypeRequest } from "../types/auth.interface";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import createClientComponentClient from "../../../config/supabase/client";
 import createServerComponentClient from "@/config/supabase/server";
-import { authService } from "../services/auth.service";
 import { cookies } from "next/headers";
+import createClientComponentClient from "../../../config/supabase/client";
+import { authService } from "../services/auth.service";
+import { AuthLoginTypeRequest } from "../types/auth.interface";
 
 export async function signInAction({ email, password }: AuthLoginTypeRequest) {
   const result = await authService()

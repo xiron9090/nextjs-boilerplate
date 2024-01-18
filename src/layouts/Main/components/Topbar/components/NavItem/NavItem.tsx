@@ -46,8 +46,8 @@ const NavItem = ({
   return (
     <Box>
       <Box
-        display={'flex'}
-        alignItems={'center'}
+        display="flex"
+        alignItems="center"
         aria-describedby={id}
         sx={{ cursor: 'pointer' }}
         onClick={(e) => handleClick(e, id)}
@@ -99,7 +99,7 @@ const NavItem = ({
           {items.map((p, i) => (
             <Grid item key={i} xs={items.length > 12 ? 6 : 12}>
               <Button
-                component={'a'}
+                component="a"
                 href={p.href}
                 fullWidth
                 sx={{
@@ -119,13 +119,13 @@ const NavItem = ({
                 {p.isNew && (
                   <Box
                     padding={0.5}
-                    display={'inline-flex'}
+                    display="inline-flex"
                     borderRadius={1}
-                    bgcolor={'primary.main'}
+                    bgcolor="primary.main"
                     marginLeft={2}
                   >
                     <Typography
-                      variant={'caption'}
+                      variant="caption"
                       sx={{ color: 'common.white', lineHeight: 1 }}
                     >
                       new

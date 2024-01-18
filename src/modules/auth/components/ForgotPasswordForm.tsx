@@ -4,12 +4,8 @@ interface ForgotPasswordFromProps {
     
 }
  
-const ForgotPasswordFrom: FC<ForgotPasswordFromProps> = () => {
-    return (
-        <>
+const ForgotPasswordFrom: FC<ForgotPasswordFromProps> = () => (
         <h1>Forgot Password From</h1>
-        </>
-      );
-}
+      )
  
 export default ForgotPasswordFrom;

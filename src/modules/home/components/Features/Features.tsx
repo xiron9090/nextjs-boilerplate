@@ -149,27 +149,27 @@ const Features = (): JSX.Element => {
         <Typography
           sx={{
             textTransform: 'uppercase',
-            fontWeight: 'medium',
+            fontWeight: 'medium', 
           }}
           gutterBottom
-          color={'secondary.main'}
-          align={'center'}
+          color="secondary.main"
+          align="center"
         >
           WHAT WE DO?
         </Typography>
         <Typography
-          variant={'h4'}
+          variant="h4"
           gutterBottom
-          align={'center'}
+          align="center"
           sx={{ fontWeight: 700 }}
         >
           We craft beautiful websites and digital products
         </Typography>
         <Typography
-          variant={'h6'}
-          component={'p'}
-          color={'text.secondary'}
-          align={'center'}
+          variant="h6"
+          component="p"
+          color="text.secondary"
+          align="center"
         >
           We design, develop and launch websites and products for startups,
           companies and ourselves.
@@ -182,15 +182,15 @@ const Features = (): JSX.Element => {
               <Box
                 width={1}
                 height={1}
-                data-aos={'fade-up'}
+                data-aos="fade-up"
                 data-aos-delay={i * 100}
                 data-aos-offset={100}
                 data-aos-duration={600}
               >
                 <Box
-                  display={'flex'}
-                  flexDirection={'column'}
-                  alignItems={'flex-start'}
+                  display="flex"
+                  flexDirection="column"
+                  alignItems="flex-start"
                 >
                   <Box
                     component={Avatar}
@@ -203,7 +203,7 @@ const Features = (): JSX.Element => {
                     {item.icon}
                   </Box>
                   <Typography
-                    variant={'h6'}
+                    variant="h6"
                     gutterBottom
                     sx={{ fontWeight: 700 }}
                   >

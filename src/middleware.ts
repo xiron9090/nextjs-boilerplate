@@ -1,9 +1,9 @@
 // import createMiddleware from "next-intl/middleware";
 import { NextRequest, NextResponse } from "next/server";
-import { locales } from "./navigation";
 import createIntlMiddleware from "next-intl/middleware";
 import { createMiddlewareClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
+import { locales } from "./navigation";
 import { Database } from "../database.types";
 
 const intlMiddleware = createIntlMiddleware({

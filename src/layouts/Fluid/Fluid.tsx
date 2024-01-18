@@ -12,9 +12,9 @@ import NoSsr from '@mui/material/NoSsr';
 
 
 
-import { Footer } from './components';
 import Container from '@/components/Container';
 import TopNav from '@/components/TopNav/TopNav';
+import { Footer } from './components';
 
 interface Props {
   children: React.ReactNode;
@@ -49,7 +49,7 @@ const Fluid = ({
   return (
     <Box id="js--fluid-top">
       <AppBar
-        position={'relative'}
+        position="relative"
         sx={{
           top: 0,
           backgroundColor: bgcolor,
@@ -58,27 +58,27 @@ const Fluid = ({
       >
         <Container
           maxWidth={1500}
-          paddingTop={'8px !important'}
-          paddingBottom={'0 !important'}
+          paddingTop="8px !important"
+          paddingBottom="0 !important"
         >
           <TopNav colorInvert={colorInvert} />
         </Container>
         <Container paddingY={1} maxWidth={1500}>
           <Box
-            display={'flex'}
-            justifyContent={'space-between'}
-            alignItems={'center'}
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
             width={1}
           >
             <Box
-              display={'flex'}
+              display="flex"
               component="a"
               href="/"
               title="theFront"
               width={{ xs: 100, md: 120 }}
             >
               <Box
-                component={'img'}
+                component="img"
                 src={
                   mode === 'light' && !colorInvert
                     ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg'

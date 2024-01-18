@@ -17,20 +17,20 @@ const Topbar = ({ onSidebarOpen }: Props): JSX.Element => {
 
   return (
     <Box
-      display={'flex'}
-      justifyContent={'space-between'}
-      alignItems={'center'}
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
       width={1}
     >
       <Box
-        display={'flex'}
-        component={'a'}
+        display="flex"
+        component="a"
         href="/"
         title="theFront"
         width={{ xs: 100, md: 120 }}
       >
         <Box
-          component={'img'}
+          component="img"
           src={
             mode === 'light'
               ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg'
@@ -40,7 +40,7 @@ const Topbar = ({ onSidebarOpen }: Props): JSX.Element => {
           width={1}
         />
       </Box>
-      <Box sx={{ display: { xs: 'none', md: 'flex' } }} alignItems={'center'}>
+      <Box sx={{ display: { xs: 'none', md: 'flex' } }} alignItems="center">
         <Box marginLeft={3}>
           <Link underline="none" component="a" href="/" color="text.primary">
             Home
@@ -92,14 +92,14 @@ const Topbar = ({ onSidebarOpen }: Props): JSX.Element => {
           </Button>
         </Box>
       </Box>
-      <Box sx={{ display: { xs: 'flex', md: 'none' } }} alignItems={'center'}>
+      <Box sx={{ display: { xs: 'flex', md: 'none' } }} alignItems="center">
         <Box marginRight={1}>
           <ThemeModeToggler />
         </Box>
         <Button
           onClick={() => onSidebarOpen()}
           aria-label="Menu"
-          variant={'outlined'}
+          variant="outlined"
           sx={{
             borderRadius: 2,
             minWidth: 'auto',

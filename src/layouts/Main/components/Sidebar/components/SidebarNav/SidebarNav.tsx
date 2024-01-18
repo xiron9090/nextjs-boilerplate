@@ -33,14 +33,14 @@ const SidebarNav = ({ pages }: Props): JSX.Element => {
     <Box>
       <Box width={1} paddingX={2} paddingY={1}>
         <Box
-          display={'flex'}
+          display="flex"
           component="a"
           href="/"
           title="theFront"
           width={{ xs: 100, md: 120 }}
         >
           <Box
-            component={'img'}
+            component="img"
             src={
               mode === 'light'
               ? "https://assets.static-upwork.com/org-logo/810370216118648832?date=1702622844532"
@@ -53,38 +53,38 @@ const SidebarNav = ({ pages }: Props): JSX.Element => {
       </Box>
       <Box paddingX={2} paddingY={2}>
         <Box>
-          <NavItem title={'Landings'} items={landingPages} />
+          <NavItem title="Landings" items={landingPages} />
         </Box>
         <Box>
-          <NavItem title={'Company'} items={companyPages} />
+          <NavItem title="Company" items={companyPages} />
         </Box>
         <Box>
-          <NavItem title={'Pages'} items={secondaryPages} />
+          <NavItem title="Pages" items={secondaryPages} />
         </Box>
         <Box>
-          <NavItem title={'Account'} items={accountPages} />
+          <NavItem title="Account" items={accountPages} />
         </Box>
         <Box>
-          <NavItem title={'Blog'} items={blogPages} />
+          <NavItem title="Blog" items={blogPages} />
         </Box>
         <Box>
-          <NavItem title={'Portfolio'} items={portfolioPages} />
+          <NavItem title="Portfolio" items={portfolioPages} />
         </Box>
         <Box marginTop={2}>
           <Button
-            size={'large'}
+            size="large"
             variant="outlined"
             fullWidth
             component="a"
             href="https://thefront.maccarianagency.com/docs/introduction"
-            target={'blank'}
+            target="blank"
           >
             Documentation
           </Button>
         </Box>
         <Box marginTop={1}>
           <Button
-            size={'large'}
+            size="large"
             variant="contained"
             color="primary"
             fullWidth

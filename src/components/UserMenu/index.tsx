@@ -5,8 +5,7 @@ interface UserMenuProps {
     // open:boolean;
 }
  
-const UserMenu: FC<UserMenuProps> = () => {
-    return (  
+const UserMenu: FC<UserMenuProps> = () => (  
         <Popover
         // anchorEl={anchorEl}
         anchorOrigin={{
@@ -14,7 +13,7 @@ const UserMenu: FC<UserMenuProps> = () => {
           vertical: 'bottom'
         }}
         // onClose={onClose}
-        open={true}
+        open
       >
         <Box
           sx={{
@@ -48,7 +47,6 @@ const UserMenu: FC<UserMenuProps> = () => {
           </MenuItem>
         </MenuList>
       </Popover>
-    );
-}
+    )
  
 export default UserMenu;

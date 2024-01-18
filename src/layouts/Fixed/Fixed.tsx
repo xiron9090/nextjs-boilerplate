@@ -1,4 +1,5 @@
 "use client"
+
 import React, { useState } from 'react';
 import { alpha, useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -6,9 +7,9 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import AppBar from '@mui/material/AppBar';
 
+import Container from '@/components/Container';
 import { Topbar, Sidebar, Footer } from './components';
 import pages from '../navigation--docs';
-import Container from '@/components/Container';
 
 interface Props {
   children: React.ReactNode;
@@ -35,7 +36,7 @@ const Fixed = ({ children }: Props): JSX.Element => {
   return (
     <Box>
       <AppBar
-        position={'fixed'}
+        position="fixed"
         sx={{
           backgroundColor: theme.palette.background.paper,
           borderBottom: `1px solid ${alpha(theme.palette.divider, 0.1)}`,

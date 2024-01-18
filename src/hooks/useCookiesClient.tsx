@@ -7,11 +7,11 @@ export function useCookiesProvider() {
   const socialToken0 = cookies.get("sb-tzojakphclpcukzqxznp-auth-token.0");
   const socialToken1 = cookies.get("sb-tzojakphclpcukzqxznp-auth-token.1");
   const tokenSupabase = cookies.get("sb-tzojakphclpcukzqxznp-auth-token");
-  const refreshtoken = cookies.get("refreshToken") ?? null;
 
   const nextLocale = cookies.get("NEXT_LOCALE");
   const customDomain = cookies.get("custom-domain");
 
+  // eslint-disable-next-line @typescript-eslint/no-shadow
   const mutateToken = (token: string) => cookies.set("token", token);
 
   const changeLanguage = (lang: string) =>

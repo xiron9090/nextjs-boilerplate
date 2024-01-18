@@ -8,8 +8,6 @@ export const metadata: Metadata = {
     title: "ddddd",
   },
 };
-const HomePage = () => {
-  return <>home</>;
-};
+const HomePage = () => <>home</>;
 
 export default HomePage;

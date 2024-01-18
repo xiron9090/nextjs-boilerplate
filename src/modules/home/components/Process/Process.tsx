@@ -16,12 +16,12 @@ const Process = (): JSX.Element => {
 
   return (
     <Box>
-      <Card sx={{ boxShadow: 4 }} data-aos={'fade-up'}>
+      <Card sx={{ boxShadow: 4 }} data-aos="fade-up">
         <CardContent sx={{ padding: { sm: 4 } }}>
           <Grid container spacing={4}>
             <Grid item xs={12} sm={6}>
               <Box marginBottom={4}>
-                <Typography fontWeight={600} variant={'h6'} gutterBottom>
+                <Typography fontWeight={600} variant="h6" gutterBottom>
                   Dedicated app development platform
                 </Typography>
                 <Typography>From open source to premium services.</Typography>
@@ -39,12 +39,12 @@ const Process = (): JSX.Element => {
                     <Box
                       component={ListItem}
                       disableGutters
-                      width={'auto'}
+                      width="auto"
                       padding={0}
                     >
                       <Box
                         component={ListItemAvatar}
-                        minWidth={'auto !important'}
+                        minWidth="auto !important"
                         marginRight={2}
                       >
                         <Box
@@ -84,7 +84,7 @@ const Process = (): JSX.Element => {
                 borderTop={{ xs: `1px solid ${theme.palette.divider}`, sm: 0 }}
               >
                 <Box marginBottom={4}>
-                  <Typography fontWeight={700} variant={'h6'} gutterBottom>
+                  <Typography fontWeight={700} variant="h6" gutterBottom>
                     A better way to expand.
                     <br />
                     Globally.
@@ -95,7 +95,7 @@ const Process = (): JSX.Element => {
                     laws.
                   </Typography>
                 </Box>
-                <Button size={'large'} variant={'contained'}>
+                <Button size="large" variant="contained">
                   Learn more
                 </Button>
               </Box>

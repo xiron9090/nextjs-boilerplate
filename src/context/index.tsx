@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactNode, createContext, useContext } from "react";
+
 export type AppContextProps = {
   me: any;
   lang: "en" | "es";
@@ -22,23 +23,21 @@ export const AppContextProvider = ({
   children,
 }: {
   children: React.ReactNode;
-}) => {
+}) => (
   // const localTheme = window.localStorage.getItem("themeMode")?? 'dark';
 
-  return (
-    <AppContext.Provider
-      value={{
-        me: null,
-        lang: "en",
-        theme: "light",
-        setMe: (user: any) => {},
-        setLang: (lang: "en" | "es") => "en",
-        setTheme: (theme: "dark" | "light") => "dark",
-      }}
-    >
-      {children}
-    </AppContext.Provider>
-  );
-};
+  <AppContext.Provider
+    value={{
+      me: null,
+      lang: "en",
+      theme: "light",
+      setMe: (user: any) => {},
+      setLang: (lang: "en" | "es") => "en",
+      setTheme: (theme: "dark" | "light") => "dark",
+    }}
+  >
+    {children}
+  </AppContext.Provider>
+);
 
 export const useAppContext = () => useContext(AppContext);

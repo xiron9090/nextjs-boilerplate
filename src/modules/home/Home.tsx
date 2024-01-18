@@ -1,7 +1,9 @@
 "use client"
+
 import React from 'react';
 import Divider from '@mui/material/Divider';
 import Box from '@mui/material/Box';
+import Container from '@/components/Container';
 import {
   Team,
   Features,
@@ -11,15 +13,13 @@ import {
   Reviews,
   Work,
 } from './components';
-import Container from '@/components/Container';
 
 
-const Home = (): JSX.Element => {
-  return (
+const Home = (): JSX.Element => (
     <>
       <Hero />
-      <Box bgcolor={'primary.main'}>
-        <Container paddingX={'0 !important'} maxWidth={1}>
+      <Box bgcolor="primary.main">
+        <Container paddingX="0 !important" maxWidth={1}>
           <Partners />
         </Container>
       </Box>
@@ -42,6 +42,5 @@ const Home = (): JSX.Element => {
       </Container>
     </>
   );
-};
 
 export default Home;

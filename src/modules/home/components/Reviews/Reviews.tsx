@@ -23,9 +23,7 @@ const Reviews = (): JSX.Element => {
               component="img"
               height={1}
               width={1}
-              src={
-                'https://assets.maccarianagency.com/svg/logos/amazon-original.svg'
-              }
+              src="https://assets.maccarianagency.com/svg/logos/amazon-original.svg"
               alt="..."
               maxWidth={{ xs: 80, sm: 100, md: 120 }}
               marginBottom={2}
@@ -36,13 +34,13 @@ const Reviews = (): JSX.Element => {
                     : 'none',
               }}
             />
-            <Typography variant={'h6'} component={'p'}>
+            <Typography variant="h6" component="p">
               First class templates. These guys know what they're doing: great
               code quality, clear naming conventions and clear code structure.
               Plain awesome and a pleasure to work with.
             </Typography>
             <Box marginTop={{ xs: 2, sm: 4 }}>
-              <Typography variant={'h6'} sx={{ fontWeight: 700 }}>
+              <Typography variant="h6" sx={{ fontWeight: 700 }}>
                 Jhon Anderson
               </Typography>
               <Typography color="text.secondary">MUI lover</Typography>

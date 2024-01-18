@@ -14,8 +14,7 @@ interface LanguageMenuProps {
   onClose: any;
 }
 
-const LanguageMenu: FC<LanguageMenuProps> = ({ anchorEl, onClose, open }) => {
-  return (
+const LanguageMenu: FC<LanguageMenuProps> = ({ anchorEl, onClose, open }) => (
     <Popover
       anchorEl={anchorEl}
       anchorOrigin={{
@@ -51,6 +50,5 @@ const LanguageMenu: FC<LanguageMenuProps> = ({ anchorEl, onClose, open }) => {
       </MenuList>
     </Popover>
   );
-};
 
 export default LanguageMenu;

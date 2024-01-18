@@ -48,8 +48,8 @@ const NavItem = ({ title, items }: Props): JSX.Element => {
             {items.map((p, i) => (
               <Grid item key={i} xs={12}>
                 <Button
-                  size={'large'}
-                  component={'a'}
+                  size="large"
+                  component="a"
                   href={p.href}
                   fullWidth
                   sx={{
@@ -69,13 +69,13 @@ const NavItem = ({ title, items }: Props): JSX.Element => {
                   {p.isNew && (
                     <Box
                       padding={0.5}
-                      display={'inline-flex'}
+                      display="inline-flex"
                       borderRadius={1}
-                      bgcolor={'primary.main'}
+                      bgcolor="primary.main"
                       marginLeft={2}
                     >
                       <Typography
-                        variant={'caption'}
+                        variant="caption"
                         sx={{ color: 'common.white', lineHeight: 1 }}
                       >
                         new

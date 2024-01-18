@@ -17,8 +17,7 @@ interface Props {
   };
 }
 
-const Sidebar = ({ pages, open, variant, onClose }: Props): JSX.Element => {
-  return (
+const Sidebar = ({ pages, open, variant, onClose }: Props): JSX.Element => (
     <Drawer
       anchor="left"
       onClose={() => onClose()}
@@ -41,6 +40,5 @@ const Sidebar = ({ pages, open, variant, onClose }: Props): JSX.Element => {
       </Box>
     </Drawer>
   );
-};
 
 export default Sidebar;

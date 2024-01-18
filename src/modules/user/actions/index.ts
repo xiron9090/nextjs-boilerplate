@@ -1,5 +1,5 @@
-import { userService } from "../services/user.service";
 import createServerComponentClient from "@/config/supabase/server";
+import { userService } from "../services/user.service";
 
 export async function getUserData(id: string) {
   const userData = await userService()

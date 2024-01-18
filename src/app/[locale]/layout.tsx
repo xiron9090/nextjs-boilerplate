@@ -1,8 +1,6 @@
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { ReactNode, Suspense } from "react";
-import { ThemeProvider } from "@/theme/ThemeProvider";
-import supabase from "@/config/supabase/server";
 import AuthProvider from "@/modules/auth/Provider";
 import { CookiesProvider } from "next-client-cookies/server";
 import createServerComponentClientCustom from "@/config/supabase/server";
@@ -10,6 +8,13 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Metadata } from "next";
 import { AppContextProvider } from "@/context";
+import { SettingsDrawer, SettingsProvider } from "@/components/settings";
+import ThemeProvider from "@/theme";
+import { SnackbarProvider } from "@/components/snackbar";
+import ProgressBar from "@/components/progress-bar";
+import { CheckoutProvider } from "@/sections/checkout/context";
+import { MotionLazy } from "../../components/animate/motion-lazy";
+
 type Props = {
   children: ReactNode;
   params: { locale: string };
@@ -45,27 +50,48 @@ export default async function LocaleLayout({
       </head>
       <body style={{ margin: 0 }}>
         <Suspense>
-        <AppContextProvider>
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            <CookiesProvider>
-              <ToastContainer
-                position="top-right"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="light"
-              />
-              <AuthProvider accessToken={session?.access_token}>
-                <ThemeProvider>{children}</ThemeProvider>
-              </AuthProvider>
-              <ToastContainer />
-            </CookiesProvider>
-          </NextIntlClientProvider>
+          <AppContextProvider>
+            <NextIntlClientProvider locale={locale} messages={messages}>
+              <CookiesProvider>
+                <ToastContainer
+                  position="top-right"
+                  autoClose={5000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick
+                  rtl={false}
+                  pauseOnFocusLoss
+                  draggable
+                  pauseOnHover
+                  theme="light"
+                />
+                <AuthProvider accessToken={session?.access_token}>
+                  <SettingsProvider
+                    defaultSettings={{
+                      themeMode: "light", // 'light' | 'dark'
+                      themeDirection: "ltr", //  'rtl' | 'ltr'
+                      themeContrast: "default", // 'default' | 'bold'
+                      themeLayout: "vertical", // 'vertical' | 'horizontal' | 'mini'
+                      themeColorPresets: "default", // 'default' | 'cyan' | 'purple' | 'blue' | 'orange' | 'red'
+                      themeStretch: false,
+                    }}
+                  >
+                    <ThemeProvider>
+                      <MotionLazy>
+                        <SnackbarProvider>
+                          <CheckoutProvider>
+                            <SettingsDrawer />
+                            <ProgressBar />
+                            {children}
+                          </CheckoutProvider>
+                        </SnackbarProvider>
+                      </MotionLazy>
+                    </ThemeProvider>
+                  </SettingsProvider>
+                </AuthProvider>
+                <ToastContainer />
+              </CookiesProvider>
+            </NextIntlClientProvider>
           </AppContextProvider>
         </Suspense>
       </body>

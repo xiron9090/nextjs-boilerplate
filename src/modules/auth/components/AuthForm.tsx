@@ -1,4 +1,5 @@
 "use client";
+
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa, ViewType } from "@supabase/auth-ui-shared";
 import supabase from "@/config/supabase/client";
@@ -34,7 +35,7 @@ export const AuthForm: FC<AuthFormProps> = ({ view }) => {
       }
       appearance={{ theme: ThemeSupa }}
       theme={theme.palette.mode}
-      showLinks={true}
+      showLinks
       //   providers={[]}
       redirectTo="http://localhost:3000/es/auth/callback"
     />

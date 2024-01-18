@@ -1,16 +1,18 @@
 "use client";
+
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
-import { AuthLoginTypeRequest } from "../types/auth.interface";
-import { signInAction } from "../actions/auth.actions";
 import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FC } from "react";
-import { schemaValidationSignIn } from "../validations/auth.validation";
 import { useCookies } from "next-client-cookies";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import { schemaValidationSignIn } from "../validations/auth.validation";
+import { signInAction } from "../actions/auth.actions";
+import { AuthLoginTypeRequest } from "../types/auth.interface";
+
 interface SignInFormProps {}
 
 const SignInForm: FC<SignInFormProps> = () => {
@@ -56,7 +58,7 @@ const SignInForm: FC<SignInFormProps> = () => {
             textTransform: "uppercase",
           }}
           gutterBottom
-          color={"text.secondary"}
+          color="text.secondary"
           fontWeight={700}
         >
           {t("auth.signIn.login")}
@@ -88,7 +90,7 @@ const SignInForm: FC<SignInFormProps> = () => {
                   helperText={errors.email ? errors.email.message : null}
                   label={`${t("auth.signIn.email")} *`}
                   variant="outlined"
-                  type={"email"}
+                  type="email"
                   fullWidth
                   {...field}
                 />
@@ -100,12 +102,12 @@ const SignInForm: FC<SignInFormProps> = () => {
               display="flex"
               flexDirection={{ xs: "column", sm: "row" }}
               alignItems={{ xs: "stretched", sm: "center" }}
-              justifyContent={"end"}
+              justifyContent="end"
               width={1}
               marginBottom={2}
             >
-              <Typography variant={"subtitle2"}>
-                <Link color={"primary"} href={"#"}>
+              <Typography variant="subtitle2">
+                <Link color="primary" href="#">
                   {t("auth.signIn.linkForgotPassword")}
                 </Link>
               </Typography>
@@ -119,7 +121,7 @@ const SignInForm: FC<SignInFormProps> = () => {
                   helperText={errors.password ? errors.password.message : null}
                   label={`${t("auth.signIn.password")} *`}
                   variant="outlined"
-                  type={"password"}
+                  type="password"
                   fullWidth
                   {...field}
                 />
@@ -131,24 +133,24 @@ const SignInForm: FC<SignInFormProps> = () => {
               display="flex"
               flexDirection={{ xs: "column", sm: "row" }}
               alignItems={{ xs: "stretched", sm: "center" }}
-              justifyContent={"space-between"}
+              justifyContent="space-between"
               width={1}
               maxWidth={600}
-              margin={"0 auto"}
+              margin="0 auto"
             >
               <Box marginBottom={{ xs: 1, sm: 0 }}>
-                <Typography variant={"subtitle2"}>
+                <Typography variant="subtitle2">
                   {t("auth.signIn.textNewAccount")}{" "}
-                  <Link color={"primary"} href={"#"}>
+                  <Link color="primary" href="#">
                     {t("auth.signIn.linkSignUp")}
                   </Link>
                 </Typography>
               </Box>
               <Button
                 disabled={!isValid || !isDirty}
-                size={"large"}
-                variant={"contained"}
-                type={"submit"}
+                size="large"
+                variant="contained"
+                type="submit"
               >
                 {t("auth.signIn.btnLogin")}
               </Button>

@@ -4,18 +4,19 @@ import Button from "@mui/material/Button";
 import { alpha, useTheme } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
 
-import { NavItem } from "./components";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import TopNav from "@/components/TopNav/TopNav";
 import { useCookiesProvider } from "@/hooks/useCookiesClient";
-import createClientComponentClient from "../../../../config/supabase/client";
 import { useUserData } from "@/hooks/useUserData";
 import { Auth } from "@supabase/auth-ui-react";
 import { Avatar } from "@/components/Avatar";
 import { IconButton } from "@mui/material";
 import LanguageIcon from '@mui/icons-material/Language';
 import { usePopover } from "@/hooks/usePoppover";
+import createClientComponentClient from "../../../../config/supabase/client";
+import { NavItem } from "./components";
+
 interface Props {
   onSidebarOpen: () => void;
   pages: {
@@ -54,20 +55,20 @@ const Topbar = ({
   const languageMenutPopover = usePopover();
   return (
     <Box
-      display={"flex"}
-      justifyContent={"space-between"}
-      alignItems={"center"}
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
       width={1}
     >
       <Box
-        display={"flex"}
+        display="flex"
         component="a"
         href="/"
         title="theFront"
         width={{ xs: 100, md: 120 }}
       >
         <Box
-          component={"img"}
+          component="img"
           src={
             mode === "light" && !colorInvert
               ? "https://assets.static-upwork.com/org-logo/810370216118648832?date=1702622844532"
@@ -77,7 +78,7 @@ const Topbar = ({
           width={1}
         />
       </Box>
-      <Box sx={{ display: { xs: "none", md: "flex" } }} alignItems={"center"}>
+      <Box sx={{ display: { xs: "none", md: "flex" } }} alignItems="center">
         {/* <Box>
           <NavItem
             title={"Landings"}
@@ -150,7 +151,7 @@ const Topbar = ({
                 color={theme.palette.primary.light}
                 // component="a"
                 // target="blank"
-                href={`/auth/signing`}
+                href="/auth/signing"
                 // size="large"
                 style={{
                   textDecoration: "none",
@@ -166,7 +167,7 @@ const Topbar = ({
                 color={theme.palette.primary.light}
                 // component="a"
                 // target="blank"
-                href={`/auth/signup`}
+                href="/auth/signup"
                 // size="large"
                 style={{
                   textDecoration: "none",
@@ -180,11 +181,11 @@ const Topbar = ({
         )}
       </Box>
 
-      <Box sx={{ display: { xs: "flex", md: "none" } }} alignItems={"center"}>
+      <Box sx={{ display: { xs: "flex", md: "none" } }} alignItems="center">
         <Button
           onClick={() => onSidebarOpen()}
           aria-label="Menu"
-          variant={"outlined"}
+          variant="outlined"
           sx={{
             borderRadius: 2,
             minWidth: "auto",
