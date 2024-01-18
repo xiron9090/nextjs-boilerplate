@@ -1,0 +1,21 @@
+{
+  "app": {
+    "title": "Boilerplate Nextjs"
+  },
+  "auth": {
+    "signIn": {
+      "login": "Login",
+      "email": "Email",
+      "password": "Password",
+      "linkForgotPassword": "Forgot your password?",
+      "textNewAccount": "Don't have an account yet?",
+      "linkSignUp": "Sign up here.",
+      "btnLogin": "Login",
+      "emailErrorMessage": "Invalid email",
+      "emailMessageRequired": "The email  required",
+      "passwordMessageRequired": "The password required",
+      "passwordErrorMessageMin": "The password must contain a minimum of 8 characters"
+    },
+    "signUp": {}
+  }
+}

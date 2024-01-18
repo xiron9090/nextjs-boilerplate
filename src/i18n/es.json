@@ -1,0 +1,21 @@
+{
+  "app": {
+    "title": "Boilerplate Nextjs"
+  },
+  "auth": {
+    "signIn": {
+      "login": "Iniciar Sesión",
+      "email": "Correo",
+      "password": "Contraseña",
+      "linkForgotPassword": "Olvido su contraseña",
+      "textNewAccount": "No tienes cuenta aun",
+      "linkSignUp": "Registrate aquí",
+      "btnLogin": "Iniciar",
+      "emailErrorMessage": "Correo invalido",
+      "emailMessageRequired": "El correo es obligatorio",
+      "passwordMessageRequired": "La contraseña es obligatoria",
+      "passwordErrorMessageMin": "La contraseña debe contener minimo 8 caracteres"
+    },
+    "signUp": {}
+  }
+}
